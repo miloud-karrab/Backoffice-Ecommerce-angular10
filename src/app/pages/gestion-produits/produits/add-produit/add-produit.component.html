@@ -1,0 +1,57 @@
+<p>add-produit works!</p>
+
+<div class="col-md-12">
+    <nb-card>
+        <nb-card-header>Product form</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputFirstName" class="label">Label</label>
+                        <input type="text" nbInput fullWidth id="inputFirstName" placeholder="label produit"
+                            [(ngModel)]="p.label">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputLastName" class="label">
+                            Prix
+                        </label>
+                        <input type="number" nbInput fullWidth id="inputLastName" placeholder="prix"
+                            [(ngModel)]="p.prix">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="categories" class="label">Catégorie</label>
+                        <nb-select id="categories" fullWidth [(ngModel)]="p.idCategorie">
+                            <nb-option *ngFor="let c of categories" value="{{c.id}}">{{c.libelle}}</nb-option>
+                  
+                        </nb-select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputWebsite" class="label">Image</label>
+                        <input type="file" nbInput fullWidth id="inputWebsite" placeholder="Picture">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputEmail" class="label">Description</label>
+                        <textarea rows="5" nbInput fullWidth shape="round" placeholder="Description"
+                            [(ngModel)]="p.description"></textarea>
+
+                    </div>
+                </div>
+            </div>
+            <button type="submit" nbButton (click)="save()">Submit</button>
+        </nb-card-body>
+    </nb-card>
+</div>

@@ -1,0 +1,21 @@
+<p>list-produit works!</p>
+<nb-card>
+    <nb-card-header>
+        Smart Table
+    </nb-card-header>
+
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source"
+         (deleteConfirm)="onDeleteConfirm($event)"
+         (edit)="onSaveConfirm($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>
+<!--
+<nb-card>
+    <nb-card-header>Window Form</nb-card-header>
+    <nb-card-body>
+        <button (click)="openWindowUpdateProduit()" nbButton>Open window form</button>
+    </nb-card-body>
+</nb-card>
+-->
